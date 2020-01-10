@@ -1,13 +1,6 @@
-class Volunteer
+class Project
   attr_accessor :title, :id
 
-  def initialize(attributes)
-    @title = attributes.fetch(:title) || nil
-    @id = attributes.fetch(:id, nil)
+  def initialize()
   end
-
-  def ==(other_volunteer)
-    self.title == other_volunteer.title
-  end
-
 end
