@@ -4,7 +4,7 @@ require "rspec"
 require "pry"
 require "pg"
 
-DB = PG.connect({:dbname => 'volunteer_tracker_test', :user => 'tyates907'})
+DB = PG.connect({:dbname => 'volunteer_tracker_test', :user =>'postgres'})
 
 RSpec.configure do |config|
   config.after(:each) do
