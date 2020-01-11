@@ -2,7 +2,7 @@ class Volunteer
   attr_accessor :name, :id
 
   def initialize(attributes)
-    @title = attributes.fetch(:name) || nil
+    @name = attributes.fetch(:name) || nil
     @id = attributes.fetch(:id, nil)
   end
 
