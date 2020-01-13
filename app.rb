@@ -6,7 +6,7 @@ require('./lib/volunteer')
 require('./lib/project')
 also_reload('lib/**/*.rb')
 
-DB = PG.connect({:dbname => 'volunteer_tracker_test', :user => 'tyates907', :host =>'localhost', :password => 'password'})
+DB = PG.connect({:dbname => 'volunteer_tracker', :user => 'tyates907', :host =>'localhost', :password => 'password'})
 
 get('/') do
   redirect to('/home')

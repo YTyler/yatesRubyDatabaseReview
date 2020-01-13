@@ -40,8 +40,8 @@ describe 'the project delete path', {:type => :feature} do
   it 'allows a user to delete a project' do
     test_project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
     test_project.save
-    id = test_project.id               #altered this test because it didn't navigate to detail page   #id = test_project.id
-    visit "/projects/#{id}"                                                    #visit "/projects/#{id}"
+    id = test_project.id
+    visit "/home/#{id}"
     click_button('Delete Project')
     visit '/'
     expect(page).not_to have_content("Teaching Kids to Code")
@@ -57,7 +57,7 @@ describe 'the volunteer detail page path', {:type => :feature} do
     project_id = test_project.id.to_i
     test_volunteer = Volunteer.new({:name => 'Jasmine', :project_id => project_id, :id => nil})
     test_volunteer.save
-    visit "/projects/#{project_id}"
+    visit "/home/#{project_id}" #url altered from original
     click_link('Jasmine')
     fill_in('name', :with => 'Jane')
     click_button('Update Volunteer')
