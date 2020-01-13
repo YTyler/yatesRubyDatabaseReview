@@ -3,8 +3,10 @@ require "project"
 require "rspec"
 require "pry"
 require "pg"
+require "./credentials"
 
-DB = PG.connect({:dbname => 'volunteer_tracker_test', :user => 'tyates907', :host =>'localhost', :password => 'password'})
+CREDENTIALS[:dbname] = 'volunteer_tracker_test'
+DB = PG.connect(CREDENTIALS)
 
 RSpec.configure do |config|
   config.after(:each) do
