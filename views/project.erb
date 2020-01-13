@@ -1,5 +1,26 @@
 <h1><%= @project.title %></h1>
 
 <a href="/home/<%= @project.id %>/edit">Edit Project</a>
+<br><br>
+
+
+
+<% if @volunteers.any? %>
+<h2>Volunteers</h2>
+<ul>
+  <% @volunteers.each do |volunteer| %>
+  <li><a href="/home/<%= @project.id %>/volunteer/<%= volunteer.id %>"><%= volunteer.name %></a></li>
+  <% end %>
+</ul>
+<% else %>
+<p>There are currently no Volunteers to display.</p>
+<% end %>
+
+<form action="/home/<%= @project.id %>/volunteer" method="post">
+    <input name="name" type="text">
+  <button type="submit" class="btn">Add Volunteer</button>
+</form>
+
+
 <br>
 <a href="/home">Return Home</a>

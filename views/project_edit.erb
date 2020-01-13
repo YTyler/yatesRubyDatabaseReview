@@ -1,10 +1,10 @@
 <h1>Edit Project Details</h1>
 
 <form action="/home/<%= @project.id %>/edit" method="post">
-    <input type="hidden" name="_method" value="patch">
-    <label for="title">Name of Project</label>
-    <input name="title" type="text">
+  <input type="hidden" name="_method" value="patch">
+  <label for="title">Name of Project</label>
+  <input name="title" type="text">
   <button type="submit" class="btn">Update Project</button>
 </form>
 
-<a href="/home/<%= @project.id %>">Back to Details</a>
+<a href="/home/<%= @project.id %>">Back to Project</a>
