@@ -21,3 +21,19 @@ post('/home') do
   project.save
   redirect to ('/home')
 end
+
+get('/home/:id') do
+  @project = Project.find(params[:id].to_i)
+  erb(:project)
+end
+
+get('/home/:id/edit') do
+  @project = Project.find(params[:id].to_i)
+  erb(:project_edit)
+end
+
+patch('/home/:id/edit') do
+  @project = Project.find(params[:id].to_i)
+  @project.update(params)
+  redirect to("/home/#{params[:id]}")
+end

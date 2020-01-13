@@ -45,3 +45,4 @@ class Project
   def self.clear
     DB.exec("DELETE FROM projects *;")
   end
+end
