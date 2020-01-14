@@ -14,12 +14,18 @@ Currently the project can be accessed by downloading or cloning the repository a
 
 The repository can be found [here](https://github.com/YTyler/yatesRubyDatabaseReview.git)
 
-After cloning be sure to run 'bundle install' from the project directory to install the required gems
+Additional Steps
+* After cloning be sure to run 'bundle install' from the project directory to install the required gems
+* Create a credentials.rb file with a CREDENTIALS hash constant that houses your database connections information as the template below
+CREDENTIALS = {
+    :user => 'Your Username Here',
+    :host =>'Server Location',
+    :password => 'Your Password'
+}
 
 ## Known Bugs
 
 * No known bugs at this time
-* Definitions not yet able to be added
 
 ## Support and contact details
 
@@ -28,6 +34,7 @@ _The author can be contacted at tyates907@gmail.com_
 ## Technologies Used
 
 * Ruby 2.5.1
+* PostgreSQL Database
 
 ## Specifications
 
