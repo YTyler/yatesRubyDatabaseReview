@@ -4,11 +4,9 @@ require('pry')
 require('pg')
 require('./lib/volunteer')
 require('./lib/project')
-require "./credentials"
 also_reload('lib/**/*.rb')
 
-CREDENTIALS[:dbname] = 'volunteer_tracker'
-DB = PG.connect(CREDENTIALS)
+DB = PG.connect(:dbname => 'volunteer_tracker')
 
 get('/') do
   redirect to('/home')
