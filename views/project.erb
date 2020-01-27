@@ -2,7 +2,10 @@
 
 <a href="/home/<%= @project.id %>/edit">Edit Project</a>
 <br><br>
-
+<form action="/home/<%= @project.id %>/delete" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit" class="btn">Delete Project</button>
+</form>
 
 
 <% if @volunteers.any? %>
